@@ -12,9 +12,9 @@ const articles = [
 
 export function TrendingTitle() {
   return (
-    <div className=" container mx-auto  border px-[250px]   ">
+    <div className=" container mx-auto  border 2xl:px-[250px]    ">
       <h1 className="text-2xl  not-italic font-bold ">Trending</h1>
-      <div className="flex gap-4  ">
+      <div className="flex gap-4 max-2xl:flex-wrap items-center justify-center ">
         {articles.map((article) => (
           <TrendCards key={articles.id} article={article} />
         ))}
@@ -25,7 +25,7 @@ export function TrendingTitle() {
 
 export function TrendCards({ article }) {
   return (
-    <div className="relative mt-[30px]">
+    <div className="relative mt-[30px]  ">
       <img src={article.image} alt="Trending image" className="w-72 h-80 object-cover rounded-lg " />
       <div className="absolute top-150 left-0 right-0 bottom-0 p-6 ">
         <span className="bg-[#1d4ed8] rounded-md py-1 px-2.5 mb-4 text-white inline-block">{article.category}</span>

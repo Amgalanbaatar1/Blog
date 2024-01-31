@@ -1,7 +1,7 @@
 import { Header } from "@/components/HeaderItems/Header";
 import { Content } from "@/components/Contentitems/Content";
 import { TrendCards, TrendingTitle } from "@/components/Trending";
-// import UseEffect from "./UseEffect";
+import { AllBlogHeader } from "@/components/Allblogpost/Allblogpost";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <Header />
       <Content />
       <TrendingTitle />
+      <AllBlogHeader />
     </div>
   );
 }
