@@ -1,41 +1,11 @@
 import { useEffect, useState } from "react";
-import { resolve } from "styled-jsx/css";
-
-// const articles = [
-//   {
-//     id: 1,
-//     title: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//     category: "Technology",
-//     image: "https://images.unsplash.com/photo-1511300636408-a63a89df3482?",
-//   },
-//   {
-//     id: 2,
-//     title: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//     category: "Technology",
-//     image: "https://images.unsplash.com/photo-1511300636408-a63a89df3482?",
-//   },
-//   {
-//     id: 3,
-//     title: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//     category: "Technology",
-//     image: "https://images.unsplash.com/photo-1511300636408-a63a89df3482?",
-//   },
-//   {
-//     id: 4,
-//     title: "The Impact of Technology on the Workplace: How Technology is Changing",
-//     date: "August 20, 2022",
-//     category: "Technology",
-//     image: "https://images.unsplash.com/photo-1511300636408-a63a89df3482?",
-//   },
-// ];
 
 export function AllBlogHeader() {
   const [articles, setArticles] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    fetch("https://dev.to/api/articles?username=francescoxx")
+    fetch("https://dev.to/api/articles?username=francescoxx&per_page=9&page=1")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -43,10 +13,18 @@ export function AllBlogHeader() {
       });
   }, []);
 
-  console.log({ articles });
+  function SeeMore() {
+    fetch(`https://dev.to/api/articles?username=francescoxx&per_page=9&page=${currentPage + 1}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setArticles([...articles, ...data]);
+        setCurrentPage(currentPage + 1);
+      });
+  }
 
   return (
-    <div className="container mx-auto border xl:px-[250px] mt-[100px]">
+    <div className="container mx-auto border xl:px-[250px] mt-[100px] px-24">
       <h1 className="text-2xl font-bold mb-[32px]">All Blog Post</h1>
       <div className="flex list-none gap-4 font-serif text-[#495057] mb-[32px] ">
         <li className="text-[#D4A373]">All</li>
@@ -57,11 +35,14 @@ export function AllBlogHeader() {
         <li>Branding</li>
       </div>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
         {articles.map((article) => (
           <BlogCard key={article.id} article={article} />
         ))}
       </div>
+      <button className="border flex mx-auto my-[35px] rounded-md p-2 text-gray-500 hover:bg-slate-300 hover:text-blue-600" onClick={SeeMore}>
+        Load more
+      </button>
     </div>
   );
 }
