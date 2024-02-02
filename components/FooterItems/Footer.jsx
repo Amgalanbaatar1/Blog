@@ -3,6 +3,8 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { Mainmenu } from "../DATA/Mainmenu";
+import { menuItems } from "../DATA/menuitems";
 export function Footer() {
   return (
     <div className="container mx-auto border bg-[#F6F6F7]">
@@ -14,9 +16,7 @@ export function Footer() {
           <p className="text-[#3B3C4A]">Phone : 880 123 456 789</p>
         </div>
         <div className="flex gap-3 flex-col text-[#3B3C4A] items-center justify-center mb-5">
-          <p>Home</p>
-          <p>Blog</p>
-          <p>Contact</p>
+          <Mainmenu items={menuItems} />
         </div>
         <div className="flex gap-3 text-2xl max-md:items-center justify-center ">
           <FaFacebook />

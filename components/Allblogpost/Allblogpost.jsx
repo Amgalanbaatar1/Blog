@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
 
-export function AllBlogHeader() {
+export function AllBlogHeader({ size }) {
   const [articles, setArticles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    fetch("https://dev.to/api/articles?username=francescoxx&per_page=9&page=1")
+    fetch(`https://dev.to/api/articles?username=francescoxx&per_page=${size}&page=${currentPage + 1}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setArticles(data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-  }, []);
+  }, [currentPage]);
 
-  function SeeMore() {
-    fetch(`https://dev.to/api/articles?username=francescoxx&per_page=9&page=${currentPage + 1}`)
+  function seeMore() {
+    fetch(`https://dev.to/api/articles?username=francescoxx&per_page=${size}&page=${currentPage + 1}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setArticles([...articles, ...data]);
         setCurrentPage(currentPage + 1);
       });
   }
 
   return (
-    <div className="container mx-auto border xl:px-[250px] mt-[100px] px-24">
+    <div className="container mx-auto border xl:px-[250px]  px-24">
       <h1 className="text-2xl font-bold mb-[32px]">All Blog Post</h1>
       <div className="flex list-none gap-4 font-serif text-[#495057] mb-[32px] ">
         <li className="text-[#D4A373]">All</li>
@@ -40,7 +41,7 @@ export function AllBlogHeader() {
           <BlogCard key={article.id} article={article} />
         ))}
       </div>
-      <button className="border flex mx-auto my-[35px] rounded-md p-2 text-gray-500 hover:bg-slate-300 hover:text-blue-600" onClick={SeeMore}>
+      <button className="border flex mx-auto my-[35px] rounded-md p-2 text-gray-500 hover:bg-slate-300 hover:text-blue-600" onClick={seeMore}>
         Load more
       </button>
     </div>
