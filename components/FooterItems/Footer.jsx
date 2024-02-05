@@ -25,7 +25,7 @@ export function Footer() {
           <FaLinkedin />
         </div>
       </div>
-      <div className="list-none flex  px-[250px]  p-10  max-md:p-5 justify-between max-md:justify-center ">
+      <div className="list-none flex border-t  px-[250px]  p-10  max-md:p-5 justify-between max-md:justify-center ">
         <Logo />
         <div className=" flex gap-5 text-[#3B3C4A] max-lg:hidden ">
           <li>Terms of Use</li>

@@ -27,7 +27,7 @@ export function AllBlogHeader({ size }) {
   return (
     <div className="container mx-auto border xl:px-[250px]  px-24">
       <h1 className="text-2xl font-bold mb-[32px]">All Blog Post</h1>
-      <div className="flex list-none gap-4 font-serif text-[#495057] mb-[32px] ">
+      <div className="flex list-none gap-4 font-serif text-[#495057] mb-[32px] max-sm:hidden ">
         <li className="text-[#D4A373]">All</li>
         <li>Design</li>
         <li>Travel</li>
