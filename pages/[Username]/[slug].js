@@ -25,7 +25,7 @@ export default function () {
     <div className="container mx-auto border">
       <Head>
         <meta property="og:title " content="Луу жилийн СУУДЛЫН ЗАСАЛ ба ЗҮГ МӨР ГАРГАХ"></meta>
-        <meta property="og:image " content="https://mgl.gogo.mn/newsn/thumbnail/1000/images/c/2024/01/314897-22012024-1705908601-1779861170-%D0%9B%D1%83%D1%83_%D0%B6%D0%B8%D0%BB.jpg"></meta>
+        <meta property="og:image " content="https://mgl.gogo.mn/newsn/thumbnail/1000/images/c/2024/01/314897-22012024-1705908601-1779861170-%D0%9B%D1%83%D1%83_%D0%B6%D0%B8%D0%BB.jpgnpx "></meta>
         <meta property="og:description " content=" Цагаан сарын шинийн нэгний өглөө мөр гаргах зан үйл нь байгаль орчноо танин мэдэх, дасан зохицож, хайрлан амьдрах ухаан юм."></meta>
       </Head>
       <Header />

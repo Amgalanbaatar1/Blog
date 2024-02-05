@@ -1,7 +1,7 @@
 export function Content() {
   return (
     <div className=" container mx-auto  border pb-36 xl:px-[250px] relative max-md:hidden">
-      <img src="/images/image.png" alt="Content image" />
+      <img src="/images/proimage/1/image.png" alt="Content image" />
       <div className="flex justify-end gap-[9px] mt-[11px]">
         <div className="border w-[40px] h-[40px] items-center flex justify-center rounded">
           <img src="/images/icon.png" alt="icon" />
