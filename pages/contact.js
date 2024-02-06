@@ -34,7 +34,7 @@ export default function blog() {
                   <input type="email" name="name" placeholder="Your Email" className="border p-1 rounded  w-[225px]  mb-6" />
                 </label>
                 <input type="email" name="name" placeholder="Subject" className="border p-1 rounded  w-[474px] mb-6 " />
-                <input type="email" name="name" placeholder="Write a Message" className="border p-1 rounded  w-[474px] h-[134px]" />
+                <textarea type="text-area" name="name" placeholder="Write a Message" className="border p-1 rounded  w-[474px] h-[134px]" />
               </form>
               <button className="bg-[#4B6BFB] p-2 text-white rounded mt-6 hover:bg-blue-700">Send Message</button>
             </div>

@@ -29,11 +29,12 @@ export function AllBlogHeader({ size }) {
       <h1 className="text-2xl font-bold mb-[32px]">All Blog Post</h1>
       <div className="flex list-none gap-4 font-serif text-[#495057] mb-[32px] max-sm:hidden ">
         <li className="text-[#D4A373]">All</li>
-        <li>Design</li>
-        <li>Travel</li>
-        <li>Fashion</li>
-        <li>Technology</li>
-        <li>Branding</li>
+        <li>Beginers</li>
+        <li>Programm</li>
+        <li>Webdev</li>
+        <li>React</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
@@ -53,7 +54,14 @@ export function BlogCard({ article }) {
     <a href={article.path} className="border p-5 rounded">
       <img src={article.cover_image} alt="CardIMage" className="rounded mb-[16px] aspect-video object-cover" />
       <div className="p-2">
-        <span className="bg-[#1d4ed8] rounded-md py-1 px-2.5 mb-4 text-white inline-block">{article.tag_list[0]}</span>
+        <div className="flex gap-2 flex-wrap">
+          {article.tag_list.map((tag) => (
+            <span key={tag} className="bg-[#1d4ed8] gap-3 rounded-md py-1 px-2.5  text-white inline-block">
+              {tag}
+            </span>
+          ))}
+        </div>
+
         <div className="font-semibold text-2xl">{article.title}</div>
         <div className="text-[#97989F] font-normal text-base ">{article.readable_publish_date}</div>
       </div>

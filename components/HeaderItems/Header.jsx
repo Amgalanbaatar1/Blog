@@ -2,12 +2,12 @@ import { CiSearch } from "react-icons/ci";
 import { Menu } from "./menuIcon";
 import { menuItems } from "../DATA/menuitems";
 import { Mainmenu } from "../DATA/Mainmenu";
-import Link from "next/link";
+import { Nlogo } from "@/public/Nlogo";
 
 export function Header() {
   return (
     <div className=" flex justify-between container mx-auto border px-5 py-5 xl:py-8 xl:px-[250px]">
-      <img src="/icons/Logo.svg" alt="Header Logo" />
+      <Nlogo />
       <div className="flex md:hidden">
         <Menu />
       </div>
