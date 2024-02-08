@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FilterArticles } from "./filterArticles";
 
 export function AllBlogHeader({ size }) {
   const [articles, setArticles] = useState([]);
@@ -27,16 +28,7 @@ export function AllBlogHeader({ size }) {
   return (
     <div className="container mx-auto border xl:px-[250px]  px-24">
       <h1 className="text-2xl font-bold mb-[32px]">All Blog Post</h1>
-      <div className="flex list-none gap-4 font-serif text-[#495057] mb-[32px] max-sm:hidden ">
-        <li className="text-[#D4A373]">All</li>
-        <li>Beginers</li>
-        <li>Programm</li>
-        <li>Webdev</li>
-        <li>React</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-      </div>
-
+      <FilterArticles />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
         {articles.map((article) => (
           <BlogCard key={article.id} article={article} />
