@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { FilterArticles } from "./filterArticles";
+import { FilterArticles } from "./FilterArticles";
+import { BlogCard } from "./BlogCard";
 
 export function AllBlogHeader({ size }) {
   const [articles, setArticles] = useState([]);
@@ -34,29 +35,9 @@ export function AllBlogHeader({ size }) {
           <BlogCard key={article.id} article={article} />
         ))}
       </div>
-      <button className="border flex mx-auto my-[35px] rounded-md p-2 text-gray-500 hover:bg-slate-300 hover:text-blue-600" onClick={seeMore}>
+      <button className="border flex mx-auto my-[35px] rounded-md p-2 text-gray-500 hover:bg-slate-300 hover:text-blue-600 hover:border-[#1d4ed8]" onClick={seeMore}>
         Load more
       </button>
     </div>
-  );
-}
-
-export function BlogCard({ article }) {
-  return (
-    <a href={article.path} className="border p-5 rounded">
-      <img src={article.cover_image} alt="CardIMage" className="rounded mb-[16px] aspect-video object-cover" />
-      <div className="p-2">
-        <div className="flex gap-2 flex-wrap">
-          {article.tag_list.map((tag) => (
-            <span key={tag} className="bg-[#1d4ed8] gap-3 rounded-md py-1 px-2.5  text-white inline-block">
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div className="font-semibold text-2xl">{article.title}</div>
-        <div className="text-[#97989F] font-normal text-base ">{article.readable_publish_date}</div>
-      </div>
-    </a>
   );
 }
