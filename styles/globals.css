@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.prose p {
+  padding: 20px;
+}
+
+.prose h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prose h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prose h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prose h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prose p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.prose iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: 100%;
+}

@@ -8,7 +8,7 @@ import { menuItems } from "../DATA/menuitems";
 export function Footer() {
   return (
     <div className="container mx-auto border bg-[#F6F6F7]">
-      <div className="flex px-[250px]  justify-between p-10 max-lg:flex-col">
+      <div className="flex px-[250px] max-lg:hidden  justify-between p-10 max-lg:flex-col">
         <div className="border-black w-[200px] text-gray-600 max-lg:hidden ">
           <p className="text-[#181A2A] font-semibold  ">About</p>
           <p className="mb-5 text-[#3B3C4A]  ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>

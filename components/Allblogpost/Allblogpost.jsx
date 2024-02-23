@@ -27,7 +27,7 @@ export function AllBlogHeader({ size }) {
   }
 
   return (
-    <div className="container mx-auto border xl:px-[250px]  px-24">
+    <div className="container mx-auto border xl:px-[250px]  px-8">
       <h1 className="text-2xl font-bold mb-[32px]">All Blog Post</h1>
       <FilterArticles />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
