@@ -10,7 +10,10 @@ export function Header() {
   return (
     <>
       <div className=" sticky top-0 z-10 bg-white flex justify-between container mx-auto border px-5 py-5 xl:py-8 xl:px-[250px] ">
-        <Nlogo />
+        <a href="http://localhost:3000/">
+          <Nlogo />
+        </a>
+
         <div className="flex  items-center justify-center flex-1 max-sm:hidden">
           <Mainmenu items={menuItems} />
         </div>
@@ -45,17 +48,9 @@ function MobileMenu() {
         <button className="text-2xl" onClick={closeMenu}>
           <IoIosCloseCircleOutline />
         </button>
-        <div className="p-8 font-bold text-lg">
-          
-          
-          Mobile Menu
-          
-
-          <
-          
-          </div>
-
-        <Mainmenu items={menuItems} />
+        <div className="font-bold text-lg  ">
+          <Mainmenu items={menuItems} />
+        </div>
       </div>
     </>
   );
